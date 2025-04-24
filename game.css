@@ -1,19 +1,27 @@
+/* Estilos generales */
 body {
     background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
     font-family: 'Arial', sans-serif;
     min-height: 100vh;
     margin: 0;
     padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.container{
+/* Contenedor flexible */
+.container {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
     margin: 20px 0;
 }
 
-header{
+/* Header adaptativo */
+header {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     gap: 40px;
     margin: 20px 0;
@@ -22,35 +30,40 @@ header{
     border-radius: 15px;
     backdrop-filter: blur(5px);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
 }
 
+/* Estilos de jugadores */
 div {
-    font-size: 32px;
+    font-size: 28px;
     display: inline-block;
     margin: 0;
-    padding: 15px 30px;
+    padding: 10px 25px;
     border-radius: 10px;
     text-align: center;
 }
 
-#p1{
+#p1 {
     color: #ff4757;
     background: rgba(0, 0, 0, 0.2);
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
-#p2{
+#p2 {
     color: #ffd700;
     background: rgba(0, 0, 0, 0.2);
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
-table{
+/* Tablero ajustable */
+table {
     border: 4px solid #2c3e50;
     border-radius: 10px;
     background: #2980b9;
     padding: 10px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 600px;
 }
 
 td {
@@ -63,21 +76,22 @@ td {
     cursor: pointer;
 }
 
-td.yellow-shadow:hover{
-    box-shadow: 0 0 25px #ffd700;
+td.yellow-shadow:hover {
+    box-shadow: 0 0 20px #ffd700;
     transform: scale(1.05);
 }
 
-td.red-shadow:hover{
-    box-shadow: 0 0 25px #ff4757;
+td.red-shadow:hover {
+    box-shadow: 0 0 20px #ff4757;
     transform: scale(1.05);
 }
 
-button{
+/* Botones con efecto */
+button {
     margin: 10px;
-    padding: 15px 30px;
+    padding: 12px 25px;
     border-radius: 25px;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: bold;
     background: linear-gradient(45deg, #3498db, #2c3e50);
     color: white;
@@ -93,10 +107,11 @@ button:hover {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
+/* Output de jugadores */
 output {
     font-weight: bold;
     margin-left: 10px;
-    font-size: 36px;
+    font-size: 32px;
     color: white;
 }
 
@@ -104,4 +119,33 @@ p {
     margin: 0;
     display: inline;
     font-weight: bold;
+}
+
+/* Estilos Responsive */
+@media (max-width: 768px) {
+    td {
+        height: 45px;
+        width: 45px;
+    }
+    header {
+        flex-direction: column;
+    }
+    div {
+        font-size: 22px;
+        padding: 8px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    td {
+        height: 35px;
+        width: 35px;
+    }
+    table {
+        max-width: 100%;
+    }
+    button {
+        font-size: 14px;
+        padding: 10px 20px;
+    }
 }
